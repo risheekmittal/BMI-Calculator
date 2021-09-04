@@ -2,9 +2,9 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:bmi_calculator/reusable_card.dart';
-import 'gender_card.dart';
-import 'constants.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import '../components/gender_card.dart';
+import '../constants.dart';
 import 'results_page.dart';
 
 enum Gender {male, female}
@@ -188,13 +188,11 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: (){
-              setState(() {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
-              });
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 189.0),
-              child: Text('Calculate', style: TextStyle(fontSize: 25.0),),
+              child: Center(child: Text('CALCULATE', style: kLargeButtonTextStyle)),
+              padding: EdgeInsets.only(bottom: 20.0),
               color: kBottomContainerColour,
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
