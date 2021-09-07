@@ -6,6 +6,7 @@ import 'package:bmi_calculator/components/reusable_card.dart';
 import '../components/gender_card.dart';
 import '../constants.dart';
 import 'results_page.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 
 enum Gender {male, female}
 
@@ -188,7 +189,12 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+              CalculatorBrain calc = CalculatorBrain(height: height, weight: weight);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage(
+                  bmiResult: calc.calculateBMI(),
+                  resultTest: calc.getResult(),
+                  interpretation: calc.getInterpretations(),
+                ),),);
             },
             child: Container(
               child: Center(child: Text('CALCULATE', style: kLargeButtonTextStyle)),

@@ -1,8 +1,14 @@
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage ({@required this.bmiResult, @required this.interpretation, @required this.resultTest});
+
+  final String bmiResult;
+  final String resultTest;
+  final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +38,12 @@ class ResultsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Center(child: Text('OVERWEIGHT', style: kResultTextStyle,)),
-                    Center(child: Text('26.7', style: kResultPageStyle,)),
-                    Center(child: Text('You have a higher than normal body weight.Try to exercise more.',style: TextStyle(fontSize: 22.0),textAlign: TextAlign.center,))
+                    Center(child: Text(resultTest.toUpperCase(), style: kResultTextStyle)),
+                    Center(child: Text(bmiResult, style: kResultPageStyle,)),
+                    Center(child: Text(interpretation,
+                      style: TextStyle(fontSize: 22.0),
+                      textAlign: TextAlign.center,
+                    ),),
                   ],
                 ),
               ),
