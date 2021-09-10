@@ -1,4 +1,4 @@
-<p align="center"><img src="./bmi-calci.svg" width=1000></p>
+<p align="center"><img src="./bmi.svg" width=1000></p>
 <p>
 A charismatic and pulchritudinous BMI Calculator to help complete your corpulent or scrawny structure with some suaveness.</p>
 
